@@ -72,7 +72,7 @@ DEFINE_DEF_PROP(lockedViews, nil);
                 forKey:@"keyboardPanningView"
           notification:NO];
 
-    [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView) {
+    [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
         [self updateKeyboardPanningLockedViews:keyboardFrameInView];
         [self fireEventForKeyboardFrameInView:keyboardFrameInView];
     }];
